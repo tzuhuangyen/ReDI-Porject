@@ -1,3 +1,5 @@
+[page demo](https://tzuhuangyen.github.io/ReDI-Porject/1-project%20/index.html)
+
 Description
 This code combines GitBook's 3. Code along(Simple website) and 4.Challenges (Codecademy Challenges: Challenge #5) of the Further Resources" to create a simple parallax page. It uses very basic HTML and CSS to achieve this effect.
 
