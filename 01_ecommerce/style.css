@@ -1,0 +1,172 @@
+.container {
+  width: 100%; /* 默认宽度为 100% */
+  max-width: 1200px; /* 最大宽度为 1200px */
+  margin: 0 auto; /* 居中对齐 */
+  padding: 20px; /* 内边距 */
+}
+/* tablet desktop媒体查询：当视窗宽度小于等于 1290px 时 */
+@media (max-width: 1290px) {
+  .container {
+    width: 90%; /* 可以设置为 90% 或其他适当的宽度 */
+    max-width: none; /* 移除最大宽度限制 */
+    padding: 10px; /* 调整内边距 */
+  }
+}
+/* tablet  */
+@media (max-width: 768px) {
+  .container {
+    width: 100%; /* 100% 宽度 */
+    padding: 5px; /* 更小的内边距 */
+  }
+  .logo a {
+    font-size: 16px;
+  }
+}
+/* mobile */
+@media (max-width: 576px) {
+  .container {
+    width: 100%; /* 100% 宽度 */
+    padding: 5px; /* 更小的内边距 */
+  }
+  .logo a {
+    font-size: 12px;
+  }
+}
+/* header */
+.site--bar {
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 32px;
+  position: absolute;
+  width: 100vw;
+}
+.site--logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  text-decoration: none;
+  color: rgb(38, 195, 213);
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.nav li {
+  list-style-type: none;
+}
+.nav li a {
+  text-decoration: none;
+  margin-right: 24px;
+  color: rgb(23, 192, 192);
+  transition: 0.3s ease;
+}
+.nav li a:hover {
+  color: rgb(232, 145, 15);
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* products */
+.products--list {
+  display: flex;
+  flex-wrap: wrap; /* 允许换行 */
+  justify-content: space-around;
+
+  gap: 10px; /* 项目之间的间距 */
+}
+@media (max-width: 1290px) {
+  .products--list {
+    grid-template-columns: repeat(2, 500px);
+  }
+}
+/* @media (max-width: 768px) {
+  .product {
+    flex: 1 1 calc(50% - 10px); 
+  }
+} */
+@media (max-width: 768px) {
+  .products--list {
+    grid-template-columns: repeat(1, 500px);
+  }
+
+  .product {
+    max-width: 230px;
+  }
+}
+.products--list li {
+  list-style-type: none;
+}
+.product {
+  /* flex: 1 1 calc(33.33% - 10px); 
+  box-sizing: border-box; 
+  margin: 0; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 6px;
+  text-align: center;
+  max-width: 200px;
+}
+
+/* 当视窗宽度小于等于 576px 时，每行显示一个项目 */
+/* @media (max-width: 576px) {
+  .product {
+    flex: 1 1 100%; 
+  }
+} */
+
+@media (max-width: 480px) {
+  .product {
+    max-width: 180px;
+  }
+}
+.product img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+/* footer */
+footer {
+  display: flex;
+  flex-direction: column;
+}
+.contact-details {
+  display: flex;
+  justify-content: space-between;
+}
+.more--credits {
+  color: rgb(23, 192, 192);
+}
+.more--credits a {
+  text-decoration: none;
+  color: rgb(23, 192, 192);
+}
+.social-media {
+  display: flex;
+  justify-content: space-between;
+}
+.social-media li {
+  margin-right: 24px;
+  list-style-type: none;
+}
+.social-media li a {
+  color: rgb(23, 192, 192);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.social-media li a:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+  color: rgb(232, 145, 15);
+}
+
+.more--rights {
+  text-align: center;
+}
