@@ -7,6 +7,11 @@
     <title>R-Commerce</title>
   </head>
   <body>
+    <div>
+      <nav class="breadcrumbs">
+      <a href="./index.html">Home</a> &gt;
+     </nav>
+   </div>
     <header  class="site--bar">
      <h1 class="site--logo container" id="site--logo">
         <img src="./logo-ReDI.png" alt=""><a class="logo"  href="./index.html">R-Commerce</a></h1>
@@ -19,20 +24,24 @@
         <li  class="navigation--link">
             <a href="./clothing.html">clothing</a>
         </li>
-        <li>
+        <li   class="navigation--link">
             <a href="./electronics.html">electronics</a>
         </li>
         <li class="navigation--link"><a href="">Contact</a></li>
       </ul>
+     
+      
     </header>
+  
+    
     <main class="root">
       <section class="site--hero">Ready to Shop</section>
 
-      <section class="products container">
+      <section class="products container ">
         <h3  class="products--title">All the products</h3>
         <ul class="products--list ">              
             <li >
-              <div class="product">
+              <div class="product  card">
                 <img
                   alt="This is an image"
                   src="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg"
@@ -43,17 +52,27 @@
                   USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve
                   PC Performance High Capacity; Compatibility Formatted NTFS for
                   Windows 10, Windows 8.1, Windows 7; Reformatting may be
-                  required for other operating systems; Compatibility may vary
+                  required for other operating systems; Compatibility may consty
                   depending on user's hardware configuration and operating system                </p>
                 <p class="product--price">
                   
                   $100
                 </p>
-                <button>Add to Cart</button>
+                <button class="product--details">View Details</button>
+              <!-- Modal -->
+                <div id="productModal" class="modal">
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h1>Product Details</h1>
+                    <img src="" alt="Product Image" id="modalProductImage" />
+                    <p id="modalProductDescription"></p>
+                    <p id="modalProductPrice"></p>
+                  </div>
+                </div>
               </div>
             </li>
             <li >
-              <div class="product">
+              <div class="product  card">
                 <img
                   alt="This is an image"
                   src="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg"
@@ -64,17 +83,17 @@
                   USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve
                   PC Performance High Capacity; Compatibility Formatted NTFS for
                   Windows 10, Windows 8.1, Windows 7; Reformatting may be
-                  required for other operating systems; Compatibility may vary
+                  required for other operating systems; Compatibility may consty
                   depending on user's hardware configuration and operating system                </p>
                 <p class="product--price">
                   
                   $100
                 </p>
-                <button>Add to Cart</button>
+                <button class="product--details">View Details</button>
               </div>
             </li>
             <li >
-              <div class="product">
+              <div class="product  card">
                 <img
                   alt="This is an image"
                   src="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg"
@@ -85,16 +104,56 @@
                   USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve
                   PC Performance High Capacity; Compatibility Formatted NTFS for
                   Windows 10, Windows 8.1, Windows 7; Reformatting may be
-                  required for other operating systems; Compatibility may vary
+                  required for other operating systems; Compatibility may consty
                   depending on user's hardware configuration and operating system                </p>
                 <p class="product--price">
                   
                   $100
                 </p>
-                <button>Add to Cart</button>
+                <button class="product--details">View Details</button>
               </div>
             </li>
         </ul>
+      </section>
+      <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="slider">
+          <div class="slide">
+            <img src="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg" alt="Product 1">
+            <p>Product 1 Description</p>
+          </div>
+          <div class="slide">
+            <img src="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg" alt="Product 2">
+            <p>Product 2 Description</p>
+          </div>
+          <div class="slide">
+            <img src="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg" alt="Product 3">
+            <p>Product 3 Description</p>
+          </div>
+          <div class="slide">
+            <img src="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg" alt="Product 1">
+            <p>Product 4 Description</p>
+          </div>
+          <div class="slide">
+            <img src="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg" alt="Product 1">
+            <p>Product 6 Description</p>
+          </div>
+          <div class="slide">
+            <img src="https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg" alt="Product 1">
+            <p>Product 7 Description</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="accordion">
+          <div class="accordion-item">
+            <h3 class="accordion-title">Additional Information</h3>
+            <div class="accordion-content">
+              <p>This is additional information about the product.</p>
+            </div>
+          </div>
+        </div>
+        
       </section>
     </main>
     <footer  class="more">
@@ -112,6 +171,55 @@
             </ul>
         </div>
       
-       <p class="more--rights">(c) 2024</p></footer>
-  </body>
+       <p class="more--rights">(c) 2024</p>
+    </footer>
+ 
+       <script>
+       // Get the modal
+       const modal = document.getElementById("productModal");
+ 
+       // Get the button that opens the modal
+       const btns = document.querySelectorAll(".product--details");
+ 
+       // Get the <span> element that closes the modal
+       const span = document.getElementsByClassName("close")[0];
+ 
+       // When the user clicks the button, open the modal
+       btns.forEach(btn => {
+         btn.onclick = function() {
+           modal.style.display = "block";
+           // Populate modal content based on the product details
+           const product = btn.closest(".product");
+           document.getElementById("modalProductImage").src = product.querySelector(".product--image").src;
+           document.getElementById("modalProductDescription").innerText = product.querySelector(".product--description").innerText;
+           document.getElementById("modalProductPrice").innerText = product.querySelector(".product--price").innerText;
+         };
+       });
+ 
+       // When the user clicks on <span> (x), close the modal
+       span.onclick = function() {
+         modal.style.display = "none";
+       };
+ 
+       // When the user clicks anywhere outside of the modal, close it
+       window.onclick = function(event) {
+         if (event.target == modal) {
+           modal.style.display = "none";
+         }
+       };
+
+       // Accordions functionality
+const accordionTitles = document.querySelectorAll('.accordion-title');
+
+accordionTitles.forEach(title => {
+  title.addEventListener('click', () => {
+    const content = title.nextElementSibling;
+    const isOpen = content.style.display === 'block';
+    document.querySelectorAll('.accordion-content').forEach(c => c.style.display = 'none');
+    content.style.display = isOpen ? 'none' : 'block';
+  });
+});
+
+     </script>
+      </body>
 </html>
