@@ -77,6 +77,20 @@ const products = [
     description: 'Description for product 2.',
     image: 'https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg',
   },
+  {
+    id: 3,
+    name: 'Product 3',
+    price: '$39.99',
+    description: 'Description for product 3.',
+    image: 'https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg',
+  },
+  {
+    id: 4,
+    name: 'Product 4',
+    price: '$49.99',
+    description: 'Description for product4.',
+    image: 'https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg',
+  },
   // Add more products as needed
 ];
 
@@ -103,3 +117,38 @@ function generateProductElements() {
   });
 }
 document.addEventListener('DOMContentLoaded', generateProductElements);
+
+// sorting
+document.addEventListener('DOMContentLoaded', () => {
+  const sortDropdown = document.getElementById('sort');
+  const productList = document.querySelector('.products--list');
+  const products = Array.from(productList.children);
+
+  sortDropdown.addEventListener('change', () => {
+    const sortOrder = sortDropdown.value;
+    const sortedProducts = products.sort((a, b) => {
+      const priceA = parseFloat(
+        a.querySelector('.product--price').textContent.replace('$', '')
+      );
+      const priceB = parseFloat(
+        b.querySelector('.product--price').textContent.replace('$', '')
+      );
+
+      if (sortOrder === 'asc') {
+        return priceA - priceB;
+      } else {
+        return priceB - priceA;
+      }
+    });
+
+    // Clear the product list
+    while (productList.firstChild) {
+      productList.removeChild(productList.firstChild);
+    }
+
+    // Append the sorted products
+    sortedProducts.forEach((product) => {
+      productList.appendChild(product);
+    });
+  });
+});
