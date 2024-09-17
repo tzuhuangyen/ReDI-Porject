@@ -1,0 +1,2 @@
+02_javascript- 3. Milestone Adding Products to the Cart
+Add interactive functionalities to allow users to add products to the cart. Implement a function that adds selected products to the cart and displays a confirmation message. Each product should include an "Add to Cart" button.
