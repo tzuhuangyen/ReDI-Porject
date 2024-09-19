@@ -1,0 +1,22 @@
+02_javascript- 4. Bonus Milestone: Milestone Implementing a Search Functionality and Fetch Remote Data
+Implement a search functionality that allows users to search for products by name. Display only the products that match the search query. Additionally, fetch product data from a remote web server to dynamically populate the product list.
+Requirements:
+1.JavaScript Enhancements:
+Update your JavaScript file (e.g., app.js) to include functionalities for searching products and fetching data from a remote server.
+
+2.Fetch Product Data:
+Use the API "https://fakestoreapi.com/docs" to retrieve product data.
+Use the Fetch API to retrieve product data from a remote web server.
+3.Search Input Element:
+Add a search input field to your HTML so users can enter their search queries.
+
+4.Filter Products:
+Implement a function to filter and display products that match the search query.
+
+5.Display Filtered Products:
+Update the product display to show only the products that match the search query.
+
+Additional Guidelines:
+Ensure the search functionality works for all products.
+Make sure the fetched product data is displayed correctly.
+Test the search and fetch functionalities in the browser to ensure they work correctly.
