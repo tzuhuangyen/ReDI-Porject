@@ -1,3 +1,4 @@
+// A component to represent a single tweet.
 import React, { useState } from 'react';
 
 const Tweet = ({ content }) => {

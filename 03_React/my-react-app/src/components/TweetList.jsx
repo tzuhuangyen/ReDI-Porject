@@ -1,3 +1,4 @@
+// A component to display the list of tweets.
 import React from 'react';
 import Tweet from './Tweet';
 
