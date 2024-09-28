@@ -1,13 +1,15 @@
 //A component for the tweet input form.
 import React, { useState, useContext } from 'react';
+import { AppContext, useAppContext } from './AppContext';
 
 const TweetInput = ({ addTweet }) => {
   const [tweet, setTweet] = useState('');
+  const { user } = useAppContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!tweet.trim()) return;
-    addTweet(tweet);
+    addTweet({ content: tweet, author: user.name, date: new Date() });
     setTweet('');
   };
 

@@ -1,12 +1,14 @@
 import React from 'react';
 import { useThemeGlobalContext } from './ThemeGlobalContext';
 import ThemeToggler from './ThemeToggler';
+
 const Header = () => {
   const { state } = useThemeGlobalContext();
 
   return (
     <header
       style={{
+        color: 'inherit', // 確保繼承全局樣式
         padding: '1rem',
       }}
     >
@@ -18,8 +20,6 @@ const Header = () => {
           <li>Messages</li>
         </ul>
       </nav>
-      <p>當前主題: {state.theme === 'light' ? '明亮' : '黑暗'}</p>
-      <ThemeToggler />
     </header>
   );
 };

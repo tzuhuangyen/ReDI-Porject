@@ -2,11 +2,16 @@
 import React from 'react';
 import Tweet from './Tweet';
 
-const TweetList = ({ tweets }) => {
+const TweetList = ({ tweets, onRetweet, onReply }) => {
   return (
     <ul>
       {tweets.map((tweet, index) => (
-        <Tweet key={index} content={tweet} />
+        <Tweet
+          key={index}
+          tweet={tweet}
+          onRetweet={onRetweet}
+          onReply={onReply}
+        />
       ))}
     </ul>
   );
