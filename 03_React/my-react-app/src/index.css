@@ -76,3 +76,53 @@ ul {
   list-style-type: none;
   padding: 0;
 }
+/* styles.css */
+
+.app-container {
+  background: #fff;
+  color: #000;
+  min-height: 100vh; /* 確保應用高度覆蓋全屏 */
+  transition: background 0.3s, color 0.3s; /* 添加過渡效果 */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 中央對齊 */
+}
+
+h1 {
+  text-align: center;
+}
+
+.layout {
+  display: flex;
+  width: 100%; /* 佔滿整個視窗 */
+}
+
+.header {
+  flex: 2; /* 在大螢幕上佔 2/12 的空間 */
+  display: flex;
+  flex-direction: column; /* 直排 */
+}
+
+.main-content {
+  flex: 6; /* 在大螢幕上佔 6/12 的空間 */
+  padding: 20px; /* 添加內邊距 */
+}
+
+/* 響應式樣式 */
+@media (max-width: 992px) {
+  .header {
+    flex: 1; /* 在中等螢幕上佔 1/12 的空間 */
+  }
+
+  .sidebar {
+    flex: 4; /* 在中等螢幕上仍然佔 4/12 的空間 */
+    position: relative;
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* 在小於 768px 的螢幕上隱藏 sidebar */
+  }
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useThemeGlobalContext } from './ThemeGlobalContext';
 import ThemeToggler from './ThemeToggler';
+import '../../src/styles/header.css';
 
 const Header = () => {
   const { state } = useThemeGlobalContext();
@@ -12,7 +13,7 @@ const Header = () => {
         padding: '1rem',
       }}
     >
-      <nav>
+      <nav className='header-nav'>
         <ul>
           <li>Home</li>
           <li>Explore</li>

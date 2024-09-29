@@ -8,6 +8,7 @@ import { AppContextProvider } from './components/AppContext';
 import axios from 'axios';
 import { useThemeGlobalContext } from './components/ThemeGlobalContext';
 import ThemeToggler from './components/ThemeToggler';
+import './index.css';
 
 function Index() {
   const [tweets, setTweets] = useState([]);
@@ -60,29 +61,31 @@ function Index() {
 
   return (
     <AppContextProvider>
-      <div
-        style={{
-          background: state.theme === 'light' ? '#fff' : '#333',
-          color: state.theme === 'light' ? '#000' : '#fff',
-          minHeight: '100vh', // 確保應用高度覆蓋全屏
-          transition: 'background 0.3s, color 0.3s', // 添加過渡效果
-        }}
-      >
-        <h1>Twitter Clone</h1>
-        <Header />
-        <Sidebar />
-        <main>
-          <Profile />
-          <TweetInput addTweet={addTweet} />
-          <TweetList
-            tweets={tweets}
-            onRetweet={handleRetweet}
-            onReply={handleReply}
-          />
-        </main>
-        <p>Mode: {state.theme === 'light' ? 'light' : 'dark'}</p>
+      <div className='app-container'>
+        <div
+          style={{
+            background: state.theme === 'light' ? '#fff' : '#333',
+            color: state.theme === 'light' ? '#000' : '#fff',
+            minHeight: '100vh', // 確保應用高度覆蓋全屏
+            transition: 'background 0.3s, color 0.3s', // 添加過渡效果
+          }}
+          className='layout'
+        >
+          <Header className='header' />
+
+          <main className='main-content'>
+            <Profile />
+            <TweetInput addTweet={addTweet} />
+            <TweetList
+              tweets={tweets}
+              onRetweet={handleRetweet}
+              onReply={handleReply}
+            />
+          </main>
+          <Sidebar className='sidebar' />
+        </div>
         <footer>
-          {' '}
+          <p>Mode: {state.theme === 'light' ? 'light' : 'dark'}</p>
           <ThemeToggler />
         </footer>
       </div>

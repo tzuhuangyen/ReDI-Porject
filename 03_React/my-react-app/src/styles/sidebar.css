@@ -1,0 +1,31 @@
+/* 基本樣式 */
+.sidebar {
+  flex: 4;
+  background-color: #f4f4f4;
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  position: relative; /* 改為相對定位 */
+
+  overflow-y: auto;
+}
+
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+.sidebar-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.sidebar-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* 當視窗寬度小於等於 768px 時隱藏側邊欄 */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
