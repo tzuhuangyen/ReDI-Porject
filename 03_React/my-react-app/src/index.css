@@ -11,6 +11,12 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --primary-color: #1da1f2; /* Twitter 的主色 */
+  --secondary-color: #14171a; /* 深色主題背景 */
+  --light-background-color: #ffffff; /* 淺色模式背景 */
+  --dark-background-color: #000000; /* 深色模式背景 */
+  --text-color: rgba(0, 0, 0, 0.87); /* 默認文本顏色 */
+  --link-color: #1da1f2; /* 鏈接顏色 */
 }
 
 a {
@@ -23,22 +29,25 @@ a:hover {
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
   padding: 0;
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(dark-background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s; /* 過渡效果 */
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2.5em;
   line-height: 1.1;
 }
 
 button {
-  border-radius: 8px;
+  border-radius: 30px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
@@ -79,7 +88,8 @@ ul {
 /* styles.css */
 
 .app-container {
-  background: #fff;
+  /* background: #fff; */
+  max-width: 1200px;
   color: #000;
   min-height: 100vh;
   transition: background 0.3s, color 0.3s;
@@ -102,10 +112,21 @@ h1 {
   display: flex;
   flex-direction: column;
 }
+.header-nav ul {
+  margin: 0;
+  padding: 0;
+}
 .header-nav li {
   display: flex;
   align-items: center;
+  padding: 15px;
+  transition: background-color 0.25s, border-radius 0.25s ease-in-out;
 }
+.header-nav li:hover {
+  background-color: rgb(6, 6, 6); /* 懸停效果 */
+  border-radius: 50%;
+}
+
 .header-nav p {
   margin-left: 8px;
 }
@@ -115,6 +136,13 @@ h1 {
   }
 }
 
+.TweetList li {
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: var(dark-background-color);
+}
 /* 響應式樣式 */
 @media (max-width: 992px) {
   .header {
@@ -123,7 +151,10 @@ h1 {
   .main-content {
     flex: 6;
     padding: 20px;
+    border: 1px solid #e1e8ed;
+    margin-left: 20px;
   }
+
   .sidebar {
     flex: 4;
     position: relative;

@@ -69,7 +69,7 @@ function Index() {
             minHeight: '100vh', // 確保應用高度覆蓋全屏
             transition: 'background 0.3s, color 0.3s', // 添加過渡效果
           }}
-          className='layout'
+          className={`layout ${state.theme}`}
         >
           <Header className='header' />
 

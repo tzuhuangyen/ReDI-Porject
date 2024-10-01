@@ -4,7 +4,7 @@ import Tweet from './Tweet';
 
 const TweetList = ({ tweets, onRetweet, onReply }) => {
   return (
-    <ul>
+    <ul className='TweetList'>
       {tweets.map((tweet, index) => (
         <Tweet
           key={index}
