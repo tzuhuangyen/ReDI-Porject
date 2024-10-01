@@ -1,8 +1,11 @@
 import React from 'react';
 import '../../src/styles/sidebar.css';
+import { useThemeGlobalContext } from './ThemeGlobalContext';
 const Sidebar = () => {
+  const { state } = useThemeGlobalContext();
+  console.log(state);
   return (
-    <div className='sidebar'>
+    <div className={`sidebar ${state.theme}`}>
       {/* Search */}
       <div className='sidebar-section'>
         <h3>Search</h3>

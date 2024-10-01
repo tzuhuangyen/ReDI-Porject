@@ -8,11 +8,18 @@
   left: 0;
   height: 100vh; /* 使 Header 覆蓋整個視窗高度 */
   width: 250px; /* 調整寬度適合的尺寸 */
-  background-color: #000000; /* Twitter 藍色 */
+  background-color: #000000;
   padding-top: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
-
+/* 媒體查詢，當視窗寬度 >= 992px */
+@media (min-width: 992px) {
+  .header {
+    width: 100%; /* 改為佔滿整個列 */
+    height: auto; /* 高度自動適應 */
+    position: static; /* 改變為靜態位置，以便於正常的文檔流 */
+  }
+}
 .header-nav ul {
   list-style: none;
   padding: 0;
@@ -21,7 +28,7 @@
 .header-nav li {
   margin: 20px 0;
   font-size: 1.2rem;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   cursor: pointer;
 }
 

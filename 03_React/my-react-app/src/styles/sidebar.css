@@ -1,14 +1,17 @@
 /* 基本樣式 */
 .sidebar {
   flex: 4;
-  background-color: #f4f4f4;
+  background-color: #f4f4f4; /* light mode  */
   padding: 20px;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   position: relative; /* 改為相對定位 */
-
   overflow-y: auto;
+  color: #1e1e1e;
 }
-
+.sidebar.dark {
+  background-color: #1e1e1e; /* dark mode 背景顏色 */
+  color: #ffffff; /* 深色模式文字顏色 */
+}
 .sidebar-section {
   margin-bottom: 20px;
 }

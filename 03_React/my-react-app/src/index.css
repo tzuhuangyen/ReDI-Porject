@@ -81,41 +81,51 @@ ul {
 .app-container {
   background: #fff;
   color: #000;
-  min-height: 100vh; /* 確保應用高度覆蓋全屏 */
-  transition: background 0.3s, color 0.3s; /* 添加過渡效果 */
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
   display: flex;
   flex-direction: column;
-  align-items: center; /* 中央對齊 */
+  align-items: center;
+  max-width: 1690px;
 }
-
 h1 {
   text-align: center;
 }
 
 .layout {
   display: flex;
-  width: 100%; /* 佔滿整個視窗 */
+  width: 100%;
 }
 
 .header {
-  flex: 2; /* 在大螢幕上佔 2/12 的空間 */
+  flex: 2;
   display: flex;
-  flex-direction: column; /* 直排 */
+  flex-direction: column;
 }
-
-.main-content {
-  flex: 6; /* 在大螢幕上佔 6/12 的空間 */
-  padding: 20px; /* 添加內邊距 */
+.header-nav li {
+  display: flex;
+  align-items: center;
+}
+.header-nav p {
+  margin-left: 8px;
+}
+@media (max-width: 1200px) {
+  .header-nav p {
+    display: none;
+  }
 }
 
 /* 響應式樣式 */
 @media (max-width: 992px) {
   .header {
-    flex: 1; /* 在中等螢幕上佔 1/12 的空間 */
+    flex: 1;
   }
-
+  .main-content {
+    flex: 6;
+    padding: 20px;
+  }
   .sidebar {
-    flex: 4; /* 在中等螢幕上仍然佔 4/12 的空間 */
+    flex: 4;
     position: relative;
     width: auto;
   }
